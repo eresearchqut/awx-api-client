@@ -26,9 +26,9 @@
     ]
   },
   "scripts": {
-    "clean": "rimraf dist && rimraf generated && rimraf yarn-error.log && rimraf node_modules",
-    "submoduleUpdate": "git submodule update --remote",
-    "prebuild": "(cd awx && make docker-compose-build)",
+    "init": "git clone -b devel https://github.com/ansible/awx.git awx",
+    "clean": "rimraf awx && rimraf dist && rimraf generated && rimraf yarn-error.log && rimraf node_modules",
+    "prebuild": "(cd awx && make docker-compose-build && make docker-compose)",
     "build": "tsc",
     "test": "jest"
   },
