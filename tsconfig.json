@@ -1,0 +1,27 @@
+{
+  "include": [
+    "./generated/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    ".turbo",
+    "dist"
+  ],
+  "compilerOptions": {
+    "target": "ES2023",
+    "module": "commonjs",
+    "outDir": "./dist",
+    "rootDir": "./generated",
+    "strict": true,
+    "declaration": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "noImplicitAny": false, // Element implicitly has an 'any' type because type 'typeof globalThis' has no index signature.
+    "forceConsistentCasingInFileNames": true,
+    "lib": [
+      "ES2023",
+      "DOM"
+    ]
+  }
+}
