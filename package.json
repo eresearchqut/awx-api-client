@@ -28,7 +28,7 @@
   "scripts": {
     "clean": "rimraf dist && rimraf generated && rimraf yarn-error.log && rimraf node_modules",
     "submoduleUpdate": "git submodule update --remote",
-    "prebuild": "node ./generateFromSchema.js",
+    "prebuild": "(cd awx && make docker-compose-build)",
     "build": "tsc",
     "test": "jest"
   },
