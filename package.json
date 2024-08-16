@@ -27,6 +27,7 @@
   },
   "scripts": {
     "clean": "rimraf dist && rimraf generated && rimraf yarn-error.log && rimraf node_modules",
+    "submoduleUpdate": "git submodule update --remote",
     "prebuild": "node ./generateFromSchema.js",
     "build": "tsc",
     "test": "jest"
