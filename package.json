@@ -5,13 +5,14 @@
     "url": "git+https://github.com/eresearchqut/awx-api-client.git"
   },
   "version": "1.0.0",
-  "main": "dist/index.js",
+  "main": "dist/typescript-fetch/index.js",
+  "types": "dist/typescript-fetch/index.d.ts",
   "license": "MIT",
   "release": {
     "branches": [
       "main"
     ],
-    "repositoryUrl": "https://github.com/eresearchqut/heat-api-client.git",
+    "repositoryUrl": "https://github.com/eresearchqut/awx-api-client.git",
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
@@ -26,9 +27,12 @@
     ]
   },
   "scripts": {
-    "init": "git clone -b devel https://github.com/ansible/awx.git awx",
+    "awx:build": "(git -C awx pull || git clone -b devel https://github.com/ansible/awx.git awx) && (cd awx && make docker-compose-build && make clean/ui-next ui-next)",
+    "awx:start": "(cd awx && make docker-compose)",
+    "awx:superuser": "docker exec -ti tools_awx_1 awx-manage createsuperuser",
     "clean": "rimraf awx && rimraf dist && rimraf generated && rimraf yarn-error.log && rimraf node_modules",
-    "prebuild": "(cd awx && make docker-compose-build && make docker-compose)",
+    "regen": "(cd awx && make docker-compose)",
+    "prebuild": "node ./generateFromSchema.js",
     "build": "tsc",
     "test": "jest"
   },
