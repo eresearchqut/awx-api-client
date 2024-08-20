@@ -15,7 +15,7 @@ jobs:
         with:
           generator: typescript-fetch
           openapi-file: spec.json
-          command-args: -p supportsES6=true -p npmName=awx-api-client
+          command-args: -p supportsES6=true -p npmName=awx-api-client -p npmVersion=1.0.0
       - name: Use Node.js 20.x
         uses: actions/setup-node@v4
         with:
