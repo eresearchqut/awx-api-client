@@ -5,26 +5,12 @@
     "url": "git+https://github.com/eresearchqut/awx-api-client.git"
   },
   "version": "1.0.0",
-  "main": "dist/typescript-fetch/index.js",
-  "types": "dist/typescript-fetch/index.d.ts",
   "license": "MIT",
   "release": {
     "branches": [
       "main"
     ],
-    "repositoryUrl": "https://github.com/eresearchqut/awx-api-client.git",
-    "plugins": [
-      "@semantic-release/commit-analyzer",
-      "@semantic-release/release-notes-generator",
-      "@semantic-release/npm",
-      [
-        "@semantic-release/git",
-        {
-          "message": "chore(release): ${nextRelease.version} \n\n${nextRelease.notes}"
-        }
-      ],
-      "@semantic-release/github"
-    ]
+    "repositoryUrl": "https://github.com/eresearchqut/awx-api-client.git"
   },
   "scripts": {
     "awx:build": "(git -C awx pull || git clone -b devel https://github.com/ansible/awx.git awx) && (cd awx && make docker-compose-build && make clean/ui-next ui-next)",
@@ -32,29 +18,21 @@
     "awx:superuser": "docker exec -ti tools_awx_1 awx-manage createsuperuser",
     "clean": "rimraf awx && rimraf dist && rimraf generated && rimraf yarn-error.log && rimraf node_modules",
     "regen": "(cd awx && make docker-compose)",
-    "prebuild": "node ./generateFromSchema.js",
-    "build": "tsc",
-    "test": "jest"
+    "build": "node ./generate.js",
+    "postbuild": "(cd ./generated/typescript-fetch && yarn install && yarn build)",
+    "test": "tsc && jest"
   },
   "dependencies": {},
   "devDependencies": {
     "@eresearchqut/jest-testcontainers": "^3.4.0",
-    "@semantic-release/commit-analyzer": "^13.0.0",
-    "@semantic-release/git": "^10.0.1",
-    "@semantic-release/github": "^10.1.0",
-    "@semantic-release/npm": "^12.0.1",
-    "@semantic-release/release-notes-generator": "^14.0.1",
-    "semantic-release": "^24.0.0",
     "@types/jest": "^29.5.12",
     "@types/node": "^20.14.10",
     "jest": "^29.7.0",
     "ts-jest": "^29.2.2",
     "ts-node": "^10.9.2",
-    "request": "^2.88.2",
     "node-fetch": "^2.6.13",
     "typescript": "^5.5.3",
     "dotenv": "^16.3.1",
     "rimraf": "^5.0.8"
-  },
-  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+  }
 }
