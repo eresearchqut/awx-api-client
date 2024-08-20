@@ -18,8 +18,8 @@
     "awx:superuser": "docker exec -ti tools_awx_1 awx-manage createsuperuser",
     "clean": "rimraf awx && rimraf dist && rimraf generated && rimraf yarn-error.log && rimraf node_modules",
     "regen": "(cd awx && make docker-compose)",
-    "build": "node ./generate.js",
-    "postbuild": "(cd ./generated/typescript-fetch && yarn install && yarn build)",
+    "prebuild": "node ./generate.js",
+    "build": "(cd ./typescript-fetch-client && yarn install && yarn build)",
     "test": "tsc && jest"
   },
   "dependencies": {},

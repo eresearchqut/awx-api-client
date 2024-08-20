@@ -1,5 +1,5 @@
 dist
-generated
+typescript-fetch-client
 node_modules
 .env
 .idea
