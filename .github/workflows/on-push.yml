@@ -31,7 +31,6 @@ jobs:
         working-directory: typescript-fetch-client
         run: yarn install && yarn build
       - name: Publish Typescript Client
-        working-directory: typescript-fetch-client
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
