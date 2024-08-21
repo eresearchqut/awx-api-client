@@ -1,6 +1,6 @@
 {
   "include": [
-    "./generated/**/*"
+    "./test/**/*"
   ],
   "exclude": [
     "node_modules",
@@ -11,7 +11,7 @@
     "target": "ES2023",
     "module": "commonjs",
     "outDir": "./dist",
-    "rootDir": "./generated",
+    "rootDir": "./",
     "strict": true,
     "declaration": true,
     "esModuleInterop": true,

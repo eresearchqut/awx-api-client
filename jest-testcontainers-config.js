@@ -1,6 +1,6 @@
 module.exports = {
     awx: {
-        image: 'wiremock/wiremock',
+        image: 'wiremock/wiremock:3.9.1',
         ports: [8080],
         resourcesQuota: {
             memory: 0.25
@@ -10,6 +10,7 @@ module.exports = {
             target: '/home/wiremock',
             mode: 'rw'
         }],
-        command: ['--verbose', '--disable-banner', '--record-mappings', `--proxy-all=${process.env.AWX_URL}`]
+        command: ['--verbose', '--disable-banner', '--record-mappings',
+            '--proxy-all', 'https://host.docker.internal:8043' ]
     }
 }
