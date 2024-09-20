@@ -12,7 +12,15 @@ Open API Definition and typescript Client Generator with Test for AWX
 * Yarn
 
 ### First time
-
+#### Get python pip installed
+```sh
+sudo apt install python3-pip
+```
+#### Get Ansible
+```sh
+pip install ansible
+```
+#### Install dependencies
 ```sh
 yarn install
 ```
