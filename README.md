@@ -20,6 +20,10 @@ sudo apt install python3-pip
 ```sh
 pip install ansible
 ```
+#### Pre-Install dependencies
+```sh
+yarn prebuild
+```
 #### Install dependencies
 ```sh
 yarn install
