@@ -1,5 +1,6 @@
-import { ApiApi } from "awx-api-client";
+
 import { configuration } from "./Config";
+import {ApiApi} from "../generated/src";
 
 describe("AWXApiTest", () => {
   const api = new ApiApi(configuration);

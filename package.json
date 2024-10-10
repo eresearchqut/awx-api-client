@@ -13,20 +13,21 @@
     "repositoryUrl": "https://github.com/eresearchqut/awx-api-client.git"
   },
   "scripts": {
+    "awx:clean": "rimraf:awx",
     "awx:build": "(git -C awx pull || git clone -b devel https://github.com/ansible/awx.git awx) && (cd awx && make docker-compose-build && make clean/ui ui)",
     "awx:start": "(cd awx && make docker-compose)",
     "awx:superuser": "docker exec -ti tools_awx_1 awx-manage createsuperuser",
-    "clean": "rimraf awx && rimraf dist && rimraf generated && rimraf yarn-error.log && rimraf typescript-fetch-client && rimraf node_modules",
+    "clean": "rimraf dist && rimraf generated && rimraf yarn-error.log && rimraf node_modules",
     "regen": "(cd awx && make docker-compose)",
     "prebuild": "node ./generate.js",
-    "build": "node ./generate.js && (cd ./typescript-fetch-client && yarn install && yarn build)",
-    "test": "tsc && jest"
+    "build": "tsc",
+    "test": "jest"
   },
   "dependencies": {
-    "awx-api-client": "./typescript-fetch-client"
+
   },
   "devDependencies": {
-    "@eresearchqut/jest-testcontainers": "^3.4.0",
+    "@eresearchqut/jest-testcontainers": "^3.6.4",
     "@types/jest": "^29.5.12",
     "@types/node": "^22.5.1",
     "dotenv": "^16.3.1",

@@ -1,6 +1,6 @@
 dist
-typescript-fetch-client
 node_modules
 .env
 .idea
 awx
+generated
