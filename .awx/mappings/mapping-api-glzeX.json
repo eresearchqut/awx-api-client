@@ -1,0 +1,32 @@
+{
+  "id" : "14c33444-1535-35fd-a492-2108d7a6e990",
+  "request" : {
+    "url" : "/api/",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 200,
+    "bodyFileName" : "body-api-glzeX.json",
+    "headers" : {
+      "X-API-Product-Name" : "AWX",
+      "Server" : "nginx",
+      "X-Content-Type-Options" : "nosniff",
+      "X-API-Query-Time" : "0.003s",
+      "X-API-Time" : "0.265s",
+      "Date" : "Fri, 11 Oct 2024 02:05:11 GMT",
+      "Allow" : "GET, HEAD, OPTIONS",
+      "Strict-Transport-Security" : "max-age=15768000",
+      "Access-Control-Expose-Headers" : "X-API-Request-Id",
+      "X-API-Total-Time" : "0.289s",
+      "X-API-Query-Count" : "2",
+      "Set-Cookie" : "csrftoken=Es54ugBVoHkMtDtE5raa0BapN7LHuOhe; Path=/; SameSite=Lax",
+      "X-API-Request-Id" : "dd4dddd64b7545e8808a4757052edcee",
+      "Vary" : "Accept, Cookie, Accept-Language, origin",
+      "X-API-Node" : "awx-1",
+      "X-API-Product-Version" : "24.6.2.dev128+g825a02c86a",
+      "Content-Language" : "en",
+      "Content-Type" : "application/json"
+    }
+  },
+  "uuid" : "14c33444-1535-35fd-a492-2108d7a6e990"
+}
