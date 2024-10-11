@@ -35,7 +35,7 @@ jobs:
         id: version
         run: |
           # Get the latest tag
-          LATEST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "v0.0.0")
+          LATEST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "0.0.0")
           echo "Latest tag: $LATEST_TAG"
   
           # Extract version number and increment it
@@ -46,7 +46,7 @@ jobs:
             NEW_PATCH=$((PATCH + 1))
             NEW_TAG="v${MAJOR}.${MINOR}.${NEW_PATCH}"
           else
-            NEW_TAG="v1.0.0"
+            NEW_TAG="1.0.0"
           fi
   
           echo "New tag: $NEW_TAG"
