@@ -1,12 +1,11 @@
 import { ApiApi } from "awx-api-client";
 import { configuration } from "./Config";
 
-describe("AWXApiTest", () => {
+describe("AWX API Test", () => {
   const api = new ApiApi(configuration);
 
   test("api list", async () => {
     const response = await api.apiList();
-    console.log(response);
     expect(response).toEqual({
       description: "AWX REST API",
       current_version: "/api/v2/",
