@@ -23,9 +23,7 @@
     "build": "tsc",
     "test": "jest"
   },
-  "dependencies": {
-
-  },
+  "dependencies": {},
   "devDependencies": {
     "@eresearchqut/jest-testcontainers": "^3.6.4",
     "@types/jest": "^29.5.12",
