@@ -1,0 +1,37 @@
+{
+  "id" : "5faebcf6-e64c-3c0e-9c51-ad0d236b39b5",
+  "request" : {
+    "url" : "/api/v2/job_templates/26/launch/",
+    "method" : "POST",
+    "bodyPatterns" : [ {
+      "equalToJson" : "{}",
+      "ignoreArrayOrder" : true,
+      "ignoreExtraElements" : true
+    } ]
+  },
+  "response" : {
+    "status" : 201,
+    "bodyFileName" : "body-api-v2-job_templates-26-launch-F9B2K.json",
+    "headers" : {
+      "X-API-Product-Name" : "AWX",
+      "Server" : "nginx",
+      "X-Content-Type-Options" : "nosniff",
+      "X-API-Query-Time" : "0.067s",
+      "X-API-Time" : "0.273s",
+      "Date" : "Thu, 24 Oct 2024 01:25:36 GMT",
+      "Allow" : "GET, POST, HEAD, OPTIONS",
+      "Strict-Transport-Security" : "max-age=15768000",
+      "Access-Control-Expose-Headers" : "X-API-Request-Id",
+      "X-API-Total-Time" : "0.303s",
+      "X-API-Query-Count" : "55",
+      "X-API-Request-Id" : "43ce71f6b14a468ba051008d90a83904",
+      "Vary" : "Accept, Accept-Language, origin, Cookie",
+      "X-API-Node" : "awx-1",
+      "X-API-Product-Version" : "24.6.2.dev128+g825a02c86a",
+      "Content-Language" : "en",
+      "Location" : "/api/v2/jobs/50/",
+      "Content-Type" : "application/json"
+    }
+  },
+  "uuid" : "5faebcf6-e64c-3c0e-9c51-ad0d236b39b5"
+}

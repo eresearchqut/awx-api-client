@@ -1,0 +1,31 @@
+{
+  "id" : "840fa744-1f04-3a5e-8442-d4bc33d80bc4",
+  "request" : {
+    "url" : "/api/v2/jobs/",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 200,
+    "bodyFileName" : "body-api-v2-jobs-Rk3iA.json",
+    "headers" : {
+      "X-API-Product-Name" : "AWX",
+      "Server" : "nginx",
+      "X-Content-Type-Options" : "nosniff",
+      "X-API-Query-Time" : "0.019s",
+      "X-API-Time" : "0.186s",
+      "Date" : "Thu, 24 Oct 2024 01:25:35 GMT",
+      "Allow" : "GET, HEAD, OPTIONS",
+      "Strict-Transport-Security" : "max-age=15768000",
+      "Access-Control-Expose-Headers" : "X-API-Request-Id",
+      "X-API-Total-Time" : "0.207s",
+      "X-API-Query-Count" : "3",
+      "X-API-Request-Id" : "59e66a4ec6bf405991e4467c71926fee",
+      "Vary" : "Accept, Accept-Language, origin, Cookie",
+      "X-API-Node" : "awx-1",
+      "X-API-Product-Version" : "24.6.2.dev128+g825a02c86a",
+      "Content-Language" : "en",
+      "Content-Type" : "application/json"
+    }
+  },
+  "uuid" : "840fa744-1f04-3a5e-8442-d4bc33d80bc4"
+}
