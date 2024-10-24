@@ -24,12 +24,10 @@
         "produces": ["application/json"],
         "responses": {
           "200": {
-            "description": "An object with available API",
-            "schema": {
-              "type": "object"
-            }
+            "description": "",
+            "schema": { "$ref": "#/definitions/Empty" }
           }
-         },
+        },
         "tags": ["api"]
       },
       "parameters": []
@@ -9453,7 +9451,13 @@
         "summary": "# Retrieve a Job Template:",
         "description": "Make GET request to this resource to retrieve a single job template\nrecord containing the following fields:\n\n* `id`: Database ID for this job template. (integer)\n* `type`: Data type for this job template. (choice)\n* `url`: URL for this job template. (string)\n* `related`: Data structure with URLs of related resources. (object)\n* `summary_fields`: Data structure with name/description for related resources.  The output for some objects may be limited for performance reasons. (object)\n* `created`: Timestamp when this job template was created. (datetime)\n* `modified`: Timestamp when this job template was last modified. (datetime)\n* `name`: Name of this job template. (string)\n* `description`: Optional description of this job template. (string)\n* `job_type`:  (choice)\n    - `run`: Run\n    - `check`: Check\n* `inventory`:  (id)\n* `project`:  (id)\n* `playbook`:  (string)\n* `scm_branch`: Branch to use in job run. Project default used if blank. Only allowed if project allow_override field is set to true. (string)\n* `forks`:  (integer)\n* `limit`:  (string)\n* `verbosity`:  (choice)\n    - `0`: 0 (Normal)\n    - `1`: 1 (Verbose)\n    - `2`: 2 (More Verbose)\n    - `3`: 3 (Debug)\n    - `4`: 4 (Connection Debug)\n    - `5`: 5 (WinRM Debug)\n* `extra_vars`:  (json)\n* `job_tags`:  (string)\n* `force_handlers`:  (boolean)\n* `skip_tags`:  (string)\n* `start_at_task`:  (string)\n* `timeout`: The amount of time (in seconds) to run before the task is canceled. (integer)\n* `use_fact_cache`: If enabled, the service will act as an Ansible Fact Cache Plugin; persisting facts at the end of a playbook run to the database and caching facts for use by Ansible. (boolean)\n* `organization`: The organization used to determine access to this template. (id)\n* `last_job_run`:  (datetime)\n* `last_job_failed`:  (boolean)\n* `next_job_run`:  (datetime)\n* `status`:  (choice)\n    - `new`: New\n    - `pending`: Pending\n    - `waiting`: Waiting\n    - `running`: Running\n    - `successful`: Successful\n    - `failed`: Failed\n    - `error`: Error\n    - `canceled`: Canceled\n    - `never updated`: Never Updated\n* `execution_environment`: The container image to be used for execution. (id)\n* `host_config_key`:  (string)\n* `ask_scm_branch_on_launch`:  (boolean)\n* `ask_diff_mode_on_launch`:  (boolean)\n* `ask_variables_on_launch`:  (boolean)\n* `ask_limit_on_launch`:  (boolean)\n* `ask_tags_on_launch`:  (boolean)\n* `ask_skip_tags_on_launch`:  (boolean)\n* `ask_job_type_on_launch`:  (boolean)\n* `ask_verbosity_on_launch`:  (boolean)\n* `ask_inventory_on_launch`:  (boolean)\n* `ask_credential_on_launch`:  (boolean)\n* `ask_execution_environment_on_launch`:  (boolean)\n* `ask_labels_on_launch`:  (boolean)\n* `ask_forks_on_launch`:  (boolean)\n* `ask_job_slice_count_on_launch`:  (boolean)\n* `ask_timeout_on_launch`:  (boolean)\n* `ask_instance_groups_on_launch`:  (boolean)\n* `survey_enabled`:  (boolean)\n* `become_enabled`:  (boolean)\n* `diff_mode`: If enabled, textual changes made to any templated files on the host are shown in the standard output (boolean)\n* `allow_simultaneous`:  (boolean)\n* `custom_virtualenv`: Local absolute file path containing a custom Python virtualenv to use (string)\n* `job_slice_count`: The number of jobs to slice into at runtime. Will cause the Job Template to launch a workflow if value is greater than 1. (integer)\n* `webhook_service`: Service that webhook requests will be accepted from (choice)\n    - `\"\"`: ---------\n    - `github`: GitHub\n    - `gitlab`: GitLab\n    - `bitbucket_dc`: BitBucket DataCenter\n* `webhook_credential`: Personal Access Token for posting back the status to the service API (id)\n* `prevent_instance_group_fallback`: If enabled, the job template will prevent adding any inventory or organization instance groups to the list of preferred instances groups to run on.If this setting is enabled and you provided an empty list, the global instance groups will be applied. (boolean)\n\n\n\n\n\n# Update a Job Template:\n\nMake a PUT or PATCH request to this resource to update this\njob template.  The following fields may be modified:\n\n\n\n\n\n\n\n\n\n* `name`: Name of this job template. (string, required)\n* `description`: Optional description of this job template. (string, default=`\"\"`)\n* `job_type`:  (choice)\n    - `run`: Run (default)\n    - `check`: Check\n* `inventory`:  (id, default=``)\n* `project`:  (id, default=``)\n* `playbook`:  (string, default=`\"\"`)\n* `scm_branch`: Branch to use in job run. Project default used if blank. Only allowed if project allow_override field is set to true. (string, default=`\"\"`)\n* `forks`:  (integer, default=`0`)\n* `limit`:  (string, default=`\"\"`)\n* `verbosity`:  (choice)\n    - `0`: 0 (Normal) (default)\n    - `1`: 1 (Verbose)\n    - `2`: 2 (More Verbose)\n    - `3`: 3 (Debug)\n    - `4`: 4 (Connection Debug)\n    - `5`: 5 (WinRM Debug)\n* `extra_vars`:  (json, default=``)\n* `job_tags`:  (string, default=`\"\"`)\n* `force_handlers`:  (boolean, default=`False`)\n* `skip_tags`:  (string, default=`\"\"`)\n* `start_at_task`:  (string, default=`\"\"`)\n* `timeout`: The amount of time (in seconds) to run before the task is canceled. (integer, default=`0`)\n* `use_fact_cache`: If enabled, the service will act as an Ansible Fact Cache Plugin; persisting facts at the end of a playbook run to the database and caching facts for use by Ansible. (boolean, default=`False`)\n\n\n\n\n\n* `execution_environment`: The container image to be used for execution. (id, default=``)\n* `host_config_key`:  (string, default=`\"\"`)\n* `ask_scm_branch_on_launch`:  (boolean, default=`False`)\n* `ask_diff_mode_on_launch`:  (boolean, default=`False`)\n* `ask_variables_on_launch`:  (boolean, default=`False`)\n* `ask_limit_on_launch`:  (boolean, default=`False`)\n* `ask_tags_on_launch`:  (boolean, default=`False`)\n* `ask_skip_tags_on_launch`:  (boolean, default=`False`)\n* `ask_job_type_on_launch`:  (boolean, default=`False`)\n* `ask_verbosity_on_launch`:  (boolean, default=`False`)\n* `ask_inventory_on_launch`:  (boolean, default=`False`)\n* `ask_credential_on_launch`:  (boolean, default=`False`)\n* `ask_execution_environment_on_launch`:  (boolean, default=`False`)\n* `ask_labels_on_launch`:  (boolean, default=`False`)\n* `ask_forks_on_launch`:  (boolean, default=`False`)\n* `ask_job_slice_count_on_launch`:  (boolean, default=`False`)\n* `ask_timeout_on_launch`:  (boolean, default=`False`)\n* `ask_instance_groups_on_launch`:  (boolean, default=`False`)\n* `survey_enabled`:  (boolean, default=`False`)\n* `become_enabled`:  (boolean, default=`False`)\n* `diff_mode`: If enabled, textual changes made to any templated files on the host are shown in the standard output (boolean, default=`False`)\n* `allow_simultaneous`:  (boolean, default=`False`)\n\n* `job_slice_count`: The number of jobs to slice into at runtime. Will cause the Job Template to launch a workflow if value is greater than 1. (integer, default=`1`)\n* `webhook_service`: Service that webhook requests will be accepted from (choice)\n    - `\"\"`: ---------\n    - `github`: GitHub\n    - `gitlab`: GitLab\n    - `bitbucket_dc`: BitBucket DataCenter\n* `webhook_credential`: Personal Access Token for posting back the status to the service API (id, default=``)\n* `prevent_instance_group_fallback`: If enabled, the job template will prevent adding any inventory or organization instance groups to the list of preferred instances groups to run on.If this setting is enabled and you provided an empty list, the global instance groups will be applied. (boolean, default=`False`)\n\n\n\n\n\n\nFor a PUT request, include **all** fields in the request.\n\n\n\nFor a PATCH request, include only the fields that are being modified.\n\n\n\n# Delete a Job Template:\n\nMake a DELETE request to this resource to delete this job template.",
         "parameters": [],
-        "responses": { "204": { "description": "" } },
+        "produces": ["application/json"],
+        "responses": {
+          "204": {
+            "description": "",
+            "schema": { "$ref": "#/definitions/Empty" }
+          }
+        },
         "tags": ["api"]
       },
       "parameters": [
@@ -10115,7 +10119,69 @@
         "responses": {
           "201": {
             "description": "",
-            "schema": { "$ref": "#/definitions/JobLaunch" }
+            "schema": {
+              "type": "object",
+              "properties": {
+                "job": { "type": "integer" },
+                "ignored_fields": { "type": "object" },
+                "id": { "type": "integer" },
+                "type": { "type": "string" },
+                "url": { "type": "string" },
+                "related": { "type": "object" },
+                "summary_fields": { "type": "object" },
+                "created": { "type": "string" },
+                "modified": { "type": "string" },
+                "name": { "type": "string" },
+                "description": { "type": "string" },
+                "job_type": { "type": "string" },
+                "inventory": { "type": "integer" },
+                "project": { "type": "integer" },
+                "playbook": { "type": "string" },
+                "scm_branch": { "type": "string" },
+                "forks": { "type": "integer" },
+                "limit": { "type": "string" },
+                "verbosity": { "type": "integer" },
+                "extra_vars": { "type": "string" },
+                "job_tags": { "type": "string" },
+                "force_handlers": { "type": "boolean" },
+                "skip_tags": { "type": "string" },
+                "start_at_task": { "type": "string" },
+                "timeout": { "type": "integer" },
+                "use_fact_cache": { "type": "boolean" },
+                "organization": { "type": "integer" },
+                "unified_job_template": { "type": "integer" },
+                "launch_type": { "type": "string" },
+                "status": { "type": "string" },
+                "execution_environment": { "type": "string" },
+                "failed": { "type": "boolean" },
+                "started": { "type": "string" },
+                "finished": { "type": "string" },
+                "canceled_on": { "type": "string" },
+                "elapsed": { "type": "number" },
+                "job_args": { "type": "string" },
+                "job_cwd": { "type": "string" },
+                "job_env": { "type": "object" },
+                "job_explanation": { "type": "string" },
+                "execution_node": { "type": "string" },
+                "controller_node": { "type": "string" },
+                "result_traceback": { "type": "string" },
+                "event_processing_finished": { "type": "boolean" },
+                "launched_by": { "type": "object" },
+                "work_unit_id": { "type": "object" },
+                "job_template": { "type": "integer" },
+                "passwords_needed_to_start": { "type": "string" },
+                "allow_simultaneous": { "type": "boolean" },
+                "artifacts": { "type": "object" },
+                "scm_revision": { "type": "string" },
+                "instance_group": { "type": "string" },
+                "diff_mode": { "type": "boolean" },
+                "job_slice_number": { "type": "integer" },
+                "job_slice_count": { "type": "integer" },
+                "webhook_service": { "type": "string" },
+                "webhook_credential": { "type": "string" },
+                "webhook_guid": { "type": "string" }
+              }
+            }
           }
         },
         "tags": ["api"]
@@ -10838,7 +10904,26 @@
         "summary": "# Retrieve a Job:",
         "description": "Make GET request to this resource to retrieve a single job\nrecord containing the following fields:\n\n* `id`: Database ID for this job. (integer)\n* `type`: Data type for this job. (choice)\n* `url`: URL for this job. (string)\n* `related`: Data structure with URLs of related resources. (object)\n* `summary_fields`: Data structure with name/description for related resources.  The output for some objects may be limited for performance reasons. (object)\n* `created`: Timestamp when this job was created. (datetime)\n* `modified`: Timestamp when this job was last modified. (datetime)\n* `name`: Name of this job. (string)\n* `description`: Optional description of this job. (string)\n* `job_type`:  (choice)\n    - `run`: Run\n    - `check`: Check\n    - `scan`: Scan\n* `inventory`:  (id)\n* `project`:  (id)\n* `playbook`:  (string)\n* `scm_branch`: Branch to use in job run. Project default used if blank. Only allowed if project allow_override field is set to true. (string)\n* `forks`:  (integer)\n* `limit`:  (string)\n* `verbosity`:  (choice)\n    - `0`: 0 (Normal)\n    - `1`: 1 (Verbose)\n    - `2`: 2 (More Verbose)\n    - `3`: 3 (Debug)\n    - `4`: 4 (Connection Debug)\n    - `5`: 5 (WinRM Debug)\n* `extra_vars`:  (json)\n* `job_tags`:  (string)\n* `force_handlers`:  (boolean)\n* `skip_tags`:  (string)\n* `start_at_task`:  (string)\n* `timeout`: The amount of time (in seconds) to run before the task is canceled. (integer)\n* `use_fact_cache`: If enabled, the service will act as an Ansible Fact Cache Plugin; persisting facts at the end of a playbook run to the database and caching facts for use by Ansible. (boolean)\n* `organization`: The organization used to determine access to this unified job. (id)\n* `unified_job_template`:  (id)\n* `launch_type`:  (choice)\n    - `manual`: Manual\n    - `relaunch`: Relaunch\n    - `callback`: Callback\n    - `scheduled`: Scheduled\n    - `dependency`: Dependency\n    - `workflow`: Workflow\n    - `webhook`: Webhook\n    - `sync`: Sync\n    - `scm`: SCM Update\n* `status`:  (choice)\n    - `new`: New\n    - `pending`: Pending\n    - `waiting`: Waiting\n    - `running`: Running\n    - `successful`: Successful\n    - `failed`: Failed\n    - `error`: Error\n    - `canceled`: Canceled\n* `execution_environment`: The container image to be used for execution. (id)\n* `failed`:  (boolean)\n* `started`: The date and time the job was queued for starting. (datetime)\n* `finished`: The date and time the job finished execution. (datetime)\n* `canceled_on`: The date and time when the cancel request was sent. (datetime)\n* `elapsed`: Elapsed time in seconds that the job ran. (decimal)\n* `job_args`:  (string)\n* `job_cwd`:  (string)\n* `job_env`:  (json)\n* `job_explanation`: A status field to indicate the state of the job if it wasn&#x27;t able to run and capture stdout (string)\n* `execution_node`: The node the job executed on. (string)\n* `controller_node`: The instance that managed the execution environment. (string)\n* `result_traceback`:  (string)\n* `event_processing_finished`: Indicates whether all of the events generated by this unified job have been saved to the database. (boolean)\n* `launched_by`:  (field)\n* `work_unit_id`: The Receptor work unit ID associated with this job. (string)\n* `job_template`:  (id)\n* `passwords_needed_to_start`:  (field)\n* `allow_simultaneous`:  (boolean)\n* `artifacts`:  (json)\n* `scm_revision`: The SCM Revision from the Project used for this job, if available (string)\n* `instance_group`: The Instance group the job was run under (id)\n* `diff_mode`: If enabled, textual changes made to any templated files on the host are shown in the standard output (boolean)\n* `job_slice_number`: If part of a sliced job, the ID of the inventory slice operated on. If not part of sliced job, parameter is not used. (integer)\n* `job_slice_count`: If ran as part of sliced jobs, the total number of slices. If 1, job is not part of a sliced job. (integer)\n* `webhook_service`: Service that webhook requests will be accepted from (choice)\n    - `\"\"`: ---------\n    - `github`: GitHub\n    - `gitlab`: GitLab\n    - `bitbucket_dc`: BitBucket DataCenter\n* `webhook_credential`: Personal Access Token for posting back the status to the service API (id)\n* `webhook_guid`: Unique identifier of the event that triggered this webhook (string)\n* `host_status_counts`: Playbook stats from the Ansible playbook_on_stats event. (json)\n* `playbook_counts`: A count of all plays and tasks for the job run. (field)\n* `custom_virtualenv`:  (string)\n\n\n\n\n\n# Delete a Job:\n\nMake a DELETE request to this resource to delete this job.",
         "parameters": [],
-        "responses": { "204": { "description": "" } },
+        "produces": ["application/json"],
+        "responses": {
+          "204": {
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          },
+          "404": {
+            "description": "",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "detail": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
         "tags": ["api"]
       },
       "parameters": [
@@ -10913,6 +10998,7 @@
         "summary": "# Determine if a Job can be canceled",
         "description": "Make a GET request to this resource to determine if the job can be canceled.\nThe response will include the following field:\n\n* `can_cancel`: Indicates whether this job can be canceled (boolean, read-only)\n\n\n\n# Cancel a Job\nMake a POST request to this resource to cancel a pending or running job.  The\nresponse status code will be 202 if successful, or 405 if the job cannot be\ncanceled.",
         "parameters": [],
+        "produces": ["application/json"],
         "responses": {
           "200": {
             "description": "",
@@ -10925,18 +11011,22 @@
         "operationId": "api_jobs_cancel_create",
         "summary": "# Determine if a Job can be canceled",
         "description": "Make a GET request to this resource to determine if the job can be canceled.\nThe response will include the following field:\n\n* `can_cancel`: Indicates whether this job can be canceled (boolean, read-only)\n\n\n\n# Cancel a Job\nMake a POST request to this resource to cancel a pending or running job.  The\nresponse status code will be 202 if successful, or 405 if the job cannot be\ncanceled.",
-        "parameters": [
-          {
-            "name": "data",
-            "in": "body",
-            "required": true,
-            "schema": { "$ref": "#/definitions/JobCancel" }
-          }
-        ],
+        "parameters": [],
+        "produces": ["text/plain", "application/json"],
         "responses": {
-          "201": {
+          "202": {
+            "description": ""
+          },
+          "405": {
             "description": "",
-            "schema": { "$ref": "#/definitions/JobCancel" }
+            "schema": {
+              "type": "object",
+              "properties": {
+                "detail": {
+                  "type": "string"
+                }
+              }
+            }
           }
         },
         "tags": ["api"]
