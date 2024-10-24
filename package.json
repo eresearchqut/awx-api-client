@@ -21,11 +21,9 @@
     "regen": "(cd awx && make docker-compose)",
     "prebuild": "node ./generate.js",
     "build": "tsc",
-    "test": "jest"
+    "test": "jest --runInBand"
   },
-  "dependencies": {
-
-  },
+  "dependencies": {},
   "devDependencies": {
     "@eresearchqut/jest-testcontainers": "^3.6.4",
     "@types/jest": "^29.5.12",

@@ -1,0 +1,37 @@
+{
+  "id" : "db2443f6-61b3-3213-bc0a-d35b4d3d9319",
+  "request" : {
+    "url" : "/api/v2/job_templates/",
+    "method" : "POST",
+    "bodyPatterns" : [ {
+      "equalToJson" : "{\"name\":\"Test Job Template\",\"description\":\"This is a test job\",\"inventory\":1,\"project\":\"6\",\"playbook\":\"hello_world.yml\"}",
+      "ignoreArrayOrder" : true,
+      "ignoreExtraElements" : true
+    } ]
+  },
+  "response" : {
+    "status" : 201,
+    "bodyFileName" : "body-api-v2-job_templates-uQqpt.json",
+    "headers" : {
+      "X-API-Product-Name" : "AWX",
+      "Server" : "nginx",
+      "X-Content-Type-Options" : "nosniff",
+      "X-API-Query-Time" : "0.082s",
+      "X-API-Time" : "0.377s",
+      "Date" : "Thu, 24 Oct 2024 01:25:36 GMT",
+      "Allow" : "GET, POST, HEAD, OPTIONS",
+      "Strict-Transport-Security" : "max-age=15768000",
+      "Access-Control-Expose-Headers" : "X-API-Request-Id",
+      "X-API-Total-Time" : "0.399s",
+      "X-API-Query-Count" : "70",
+      "X-API-Request-Id" : "62bbfc246dc1473a90ce89a9ac86affd",
+      "Vary" : "Accept, Accept-Language, origin, Cookie",
+      "X-API-Node" : "awx-1",
+      "X-API-Product-Version" : "24.6.2.dev128+g825a02c86a",
+      "Content-Language" : "en",
+      "Location" : "/api/v2/job_templates/26/",
+      "Content-Type" : "application/json"
+    }
+  },
+  "uuid" : "db2443f6-61b3-3213-bc0a-d35b4d3d9319"
+}

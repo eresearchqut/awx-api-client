@@ -1,0 +1,29 @@
+{
+  "id" : "bfe84742-f96b-31af-8680-445e4742840f",
+  "request" : {
+    "url" : "/api/v2/jobs/1500000/",
+    "method" : "DELETE"
+  },
+  "response" : {
+    "status" : 404,
+    "bodyFileName" : "body-api-v2-jobs-1500000-9wSOL.json",
+    "headers" : {
+      "X-API-Product-Name" : "AWX",
+      "Server" : "nginx",
+      "X-API-Query-Time" : "0.010s",
+      "X-API-Time" : "0.156s",
+      "Date" : "Wed, 16 Oct 2024 22:13:10 GMT",
+      "Allow" : "GET, DELETE, HEAD, OPTIONS",
+      "Access-Control-Expose-Headers" : "X-API-Request-Id",
+      "X-API-Total-Time" : "0.171s",
+      "X-API-Query-Count" : "2",
+      "X-API-Request-Id" : "8d324c259b1e4ceea5ed0a4a9e2a780a",
+      "Vary" : "Accept, Accept-Language, origin, Cookie",
+      "X-API-Node" : "awx-1",
+      "X-API-Product-Version" : "24.6.2.dev128+g825a02c86a",
+      "Content-Language" : "en",
+      "Content-Type" : "application/json"
+    }
+  },
+  "uuid" : "bfe84742-f96b-31af-8680-445e4742840f"
+}

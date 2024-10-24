@@ -1,0 +1,28 @@
+{
+  "id" : "4cb1876e-0a8f-31dc-a7fd-09a7b4722de5",
+  "request" : {
+    "url" : "/api/v2/jobs/50/cancel/",
+    "method" : "POST"
+  },
+  "response" : {
+    "status" : 202,
+    "bodyFileName" : "body-api-v2-jobs-50-cancel-Gr1DG.txt",
+    "headers" : {
+      "X-API-Product-Name" : "AWX",
+      "Server" : "nginx",
+      "X-API-Query-Time" : "0.028s",
+      "X-API-Time" : "0.229s",
+      "Date" : "Thu, 24 Oct 2024 01:25:37 GMT",
+      "Allow" : "GET, POST, HEAD, OPTIONS",
+      "Access-Control-Expose-Headers" : "X-API-Request-Id",
+      "X-API-Total-Time" : "0.231s",
+      "X-API-Query-Count" : "25",
+      "X-API-Request-Id" : "b28ed5498ffb4083b4952c59cfe3641c",
+      "Vary" : "Accept, Accept-Language, origin, Cookie",
+      "X-API-Node" : "awx-1",
+      "X-API-Product-Version" : "24.6.2.dev128+g825a02c86a",
+      "Content-Language" : "en"
+    }
+  },
+  "uuid" : "4cb1876e-0a8f-31dc-a7fd-09a7b4722de5"
+}

@@ -1,4 +1,4 @@
-import { Configuration, FetchAPI } from "../generated/src"
+import { Configuration, FetchAPI } from "../generated/src";
 
 export const configuration = new Configuration({
   username: "awx",
