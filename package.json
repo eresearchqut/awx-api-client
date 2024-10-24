@@ -21,7 +21,7 @@
     "regen": "(cd awx && make docker-compose)",
     "prebuild": "node ./generate.js",
     "build": "tsc",
-    "test": "jest"
+    "test": "jest --runInBand"
   },
   "dependencies": {},
   "devDependencies": {
